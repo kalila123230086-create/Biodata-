@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profil - Kalila Nur Ghayda</title>
+<style>
+  /* ===== PENGATURAN WARNA ===== */
+  :root {
+    --page: #fff5f9;    /* latar paling luar */
+    --panel: #ffdcea;   /* panel pink muda yang membungkus semua kartu */
+    --crumb: #ffeef5;   /* latar breadcrumb */
+    --card: #ffffff;
+    --ink: #4a3340;
+    --muted: #8f6b7f;
+    --accent: #ec6fa5;  /* pink utama (tombol, bar, judul kecil) */
+    --line: #f6d3e1;
+    --bar-bg: #ffe6f0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--page); color: var(--ink);
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px; line-height: 1.5;
+  }
+
+  /* Panel besar yang membungkus semuanya */
+  .panel {
+    max-width: 960px; margin: 28px auto; padding: 18px;
+    background: var(--panel); border-radius: 4px;
+  }
+  .breadcrumb {
+    background: var(--crumb); padding: 9px 14px; margin-bottom: 18px;
+    color: var(--muted); border-radius: 4px;
+  }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+
+  /* Dua kolom: kiri 1/3, kanan 2/3 */
+  .layout { display: grid; grid-template-columns: 1fr 2fr; gap: 16px; align-items: start; }
+  .card {
+    background: var(--card); border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  }
+  .stack > .card { margin-bottom: 16px; }
+  .stack > .card:last-child { margin-bottom: 0; }
+
+  /* Kartu profil */
+  .profile { padding: 22px 16px 18px; text-align: center; }
+  .foto {
+    width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+    background: var(--line);
+  }
+  .profile h1 { font-size: 17px; margin: 12px 0 8px; }
+  .profile p { margin: 0; color: var(--muted); font-size: 12px; }
+  .btns { margin-top: 14px; display: flex; gap: 6px; justify-content: center; }
+  .btn {
+    padding: 5px 11px; border-radius: 4px; border: 1px solid var(--accent);
+    font-size: 12px; text-decoration: none; cursor: pointer; font-family: inherit;
+  }
+  .btn.fill { background: var(--accent); color: #fff; }
+  .btn.line { background: #fff; color: var(--accent); }
+
+  /* Daftar info kiri bawah (5 baris) */
+  .links { list-style: none; margin: 0; padding: 0; }
+  .links li {
+    display: flex; justify-content: space-between; gap: 8px;
+    padding: 10px 14px; border-bottom: 1px solid var(--line); font-size: 12px;
+  }
+  .links li:last-child { border-bottom: 0; }
+  .links li span:last-child { color: var(--muted); text-align: right; }
+
+  /* Kartu data diri (5 baris + tombol) */
+  .detail { padding: 6px 18px 16px; }
+  .row {
+    display: grid; grid-template-columns: 30% 1fr; gap: 10px;
+    padding: 12px 0; border-bottom: 1px solid var(--line);
+  }
+  .row .label { font-weight: 600; font-size: 12px; }
+  .row .value { color: var(--muted); font-size: 12px; word-break: break-word; }
+  .row .value a { color: var(--accent); }
+  .detail .btn { margin-top: 14px; display: inline-block; }
+
+  /* Dua kartu progress di bawah */
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .two .card { padding: 16px 18px; }
+  .two h3 { margin: 0 0 14px; font-size: 13px; }
+  .two h3 em { color: var(--accent); font-weight: 400; margin-right: 5px; }
+  .item { font-size: 11px; margin-bottom: 12px; }
+  .bar { height: 4px; background: var(--bar-bg); border-radius: 4px; margin-top: 5px; }
+  .bar div { height: 100%; background: var(--accent); border-radius: 4px; }
+
+  @media (max-width: 760px) {
+    .layout, .two { grid-template-columns: 1fr; }
+    .panel { margin: 0; }
+  }
+  @media print { .btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="panel">
+
+  <div class="breadcrumb"><a href="#">Home</a> / <a href="#">User</a> / User Profile</div>
+
+  <div class="layout">
+
+    <!-- KIRI -->
+    <div class="stack">
+      <div class="card profile">
+        <img class="foto" src="kalila.png" alt="Foto Kalila Nur Ghayda">
+        <h1>Kalila Nur Ghayda</h1>
+        <p>Mahasiswi Teknik Geomatika</p>
+        <p>Bandar Lampung, Lampung</p>
+      </div>
+
+      <div class="card">
+        <ul class="links">
+          <li><span>🏫 Kampus</span><span>Institut Teknologi Sumatera</span></li>
+          <li><span>🗺️ Jurusan</span><span>Teknik Geomatika</span></li>
+          <li><span>🎓 Angkatan</span><span>2023</span></li>
+          <li><span>📍 Lokasi</span><span>Bandar Lampung</span></li>
+          <li><span>✏️ Hobi</span><span>Menulis</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- KANAN -->
+    <div>
+      <div class="card detail">
+        <div class="row"><div class="label">Nama Lengkap</div><div class="value">Kalila Nur Ghayda</div></div>
+        <div class="row"><div class="label">Email</div><div class="value"><a href="mailto:kalila.123230086@student.itera.ac.id">kalila.123230086@student.itera.ac.id</a></div></div>
+        <div class="row"><div class="label">Tempat, Tanggal Lahir</div><div class="value">Tanjung Karang, 06 Agustus 2005</div></div>
+        <div class="row"><div class="label">Jenis Kelamin</div><div class="value">Perempuan</div></div>
+        <div class="row" style="border-bottom:0"><div class="label">Alamat</div><div class="value">Jl. Romowijoyo</div></div>
+             </div>
+
+        <div class="card">
+          <h3><em>Status Pendidikan</h3>
+          <div class="item">MTSN 1 Bandar Lampung (2017 - 2020)<div class="bar"><div style="width:100%"></div></div></div>
+          <div class="item">SMK SMTI Bandar Lampung (2020 - 2023)<div class="bar"><div style="width:100%"></div></div></div>
+          <div class="item">Institut Teknologi Sumatera (2023 - sekarang)<div class="bar"><div style="width:90%"></div></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
